@@ -93,7 +93,7 @@ def append_to_sheet(csv_row, original_link):
 
 
 # ========== STREAMLIT UI ==========
-st.set_page_config(page_title="📷 Image to Sheet", layout="centered")
+st.set_page_config(page_title="📷 Image to Sheet", layout="wide")
 st.title("📥 Extract Chat Info from Screenshot & Save to Google Sheet")
 
 raw_link = st.text_input("Paste public image URL (Google Drive or direct image link):")
