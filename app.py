@@ -10,7 +10,8 @@ import json
 # ====== LOAD CONFIGS FROM SECRETS ======
 GENAI_API_KEY = st.secrets["api"]["gemini_key"]
 SPREADSHEET_ID = st.secrets["sheets"]["spreadsheet_id"]
-SERVICE_ACCOUNT_INFO = json.loads(json.dumps(st.secrets["google_service_account"]))
+SERVICE_ACCOUNT_INFO = dict(st.secrets["google_service_account"])
+
 
 genai.configure(api_key=GENAI_API_KEY)
 model = genai.GenerativeModel("gemini-2.5-flash")
