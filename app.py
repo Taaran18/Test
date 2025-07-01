@@ -96,7 +96,7 @@ def append_to_sheet(csv_row, original_link):
 st.set_page_config(page_title="📷 Image to Sheet", layout="wide")
 st.title("📥 Extract Chat Info from Screenshot & Save to Google Sheet")
 
-raw_link = st.text_input("Paste public image URL (Google Drive or direct image link):")
+raw_link = st.text_input("Paste public image URL (Direct Image Link):")
 
 if raw_link:
     image_url = get_direct_download_link(raw_link)
@@ -107,13 +107,13 @@ if raw_link:
     else:
         st.image(image_url, caption="Detected Image", width=350)
 
-        with st.spinner("Processing image with Gemini..."):
+        with st.spinner("Processing image..."):
             result, error = call_gemini(image_bytes)
 
         if error:
             st.error(error)
         elif result:
-            st.success("✅ Gemini output:")
+            st.success("✅ Output:")
             st.code(result, language="csv")
 
             success, sheet_error = append_to_sheet(result, raw_link)
