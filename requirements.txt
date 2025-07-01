@@ -1,0 +1,14 @@
+# Streamlit for web UI
+streamlit==1.35.0
+
+# Google Gemini (Generative AI)
+google-generativeai==0.5.2
+
+# Google API clients for Sheets access
+google-api-python-client==2.125.0
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+
+# For HTTP requests (image download)
+requests==2.32.3
